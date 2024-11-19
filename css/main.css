@@ -1,0 +1,135 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+   .makelistsgreatagain {
+    font-family: "Open Sans", Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 32px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    text-align: -webkit-match-parent;
+}
+  .h1, .h2, .h3, h1, h2, h3 {
+    margin: 10px 0;
+  }
+
+/* ==========================================================================
+   End Author's custom styles
+   ========================================================================== */
+
+a {
+  flex: 1;
+  text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:visted {
+  text-decoration: none;
+}
+
+.myrow {
+  max-width: 680px;
+  flex-wrap: wrap;
+  padding-top: 40px;
+  margin: 0px auto;
+}
+
+.toggler {
+  padding: 18px;
+  width: 60px;
+  height: 60px;
+  z-index: 100;
+  position:fixed;
+}
+
+.toggler a {
+  color: #333;
+}
+
+/* .bubba {
+  font-weight: 600;
+  border-left: 3px solid #E1251B !important;
+}
+
+.bubbaspecialsauce {
+  color: #fff !important;
+  background-color: #23262c;
+} */
+
+#menu-toggle {
+  position: fixed;
+}
+
+.alert-badge {
+  position: relative;
+  display: block;
+  padding: 10px 10px 10px 50px;
+  background-color: #FEECEB;
+  color: #555;
+  text-align: left;
+  line-height: 24px;
+}
+
+.alert-badge p {
+  color: #555;
+  text-align: left;
+  line-height: 24px;
+}
+
+.alert-icon {
+  position: absolute;
+  display: block;
+  top: 13px;
+  left: 0;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  float: left;
+}
+
+.alert-error {
+  background-color: #FEECEB;
+}
+
+.alert-warning {
+  background-color: #FFF5E6;
+}
+
+.alert-info {
+  background-color: #E9F5FE;
+}
+
+.alert-success {
+  background-color: #E6F6EE;
+}
+
+.icon-error {
+  color: #f44338;
+}
+
+.icon-warning {
+  color: #FF9804;
+}
+
+.icon-info {
+  color: #2196F6;
+}
+
+.icon-success {
+  color: #00A651;
+}
+
+.hrgrey {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  border:0;
+  border-top: 1px solid #E2E8F0;
+}

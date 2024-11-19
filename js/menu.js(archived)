@@ -1,0 +1,15 @@
+$(function(){
+    var $menuToggle = $("#menu-toggle");
+    $menuToggle.click(function(e) {
+        e.preventDefault();
+        var $wrapper = $("#wrapper");
+        $wrapper.toggleClass("toggled");
+        var iconName = $wrapper.hasClass("toggled") ? "menu" : "close";
+        $("#menu-toggle > i.material-icons").text(iconName);
+    });
+    $(".sidebar-nav > li > a ").click(function(e) {
+      var $element = $(this);
+      var iconName = $element.hasClass("collapse") ? "keyboard_arrow_down" : "keyboard_arrow_up";
+      $element.find("i.material-icons").text(iconName);
+    });
+  });
