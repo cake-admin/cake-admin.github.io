@@ -18,7 +18,7 @@
     padding-left: 256px;
 }
 
-#sidebar-wrapper {
+/* #sidebar-wrapper {
     z-index: 1000;
     position: fixed;
     left: 256px;
@@ -34,9 +34,48 @@
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+} */
+
+#sidebar-wrapper {
+    width: 250px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #fff; 
+    overflow-y: auto;
+    background: #ffffff;
+    font-family: 'Open Sans';
+    border-right: 1px solid #E2E8F0;
+    font-size: 14px;
+    -webkit-tranition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    z-index: 1000;
 }
 
-#wrapper.toggled #sidebar-wrapper {
+#sidebar-wrapper.collapsed {
+    transform: translateX(-250px); /* Adjust width for collapsed state */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* To ensure compatibility with all browsers */
+#sidebar-wrapper.collapsed::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for WebKit browsers */
+}
+
+#sidebar-wrapper.collapsed + .toggler {
+    left: 10px; /* Move the button to the default position when collapsed */
+    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.toggler i {
+    font-size: 24px;
+}
+
+ #wrapper.toggled #sidebar-wrapper {
     width: 264px;
 }
 
@@ -49,14 +88,14 @@
 #wrapper.toggled #page-content-wrapper {
     position: absolute;
     margin-right: -256px;
-}
+} 
 
 /* Sidebar Styles */
 
 .sidebar-nav {
     position: absolute;
     top: 0;
-    width: 256px;
+    width: 250px;
     margin: 0;
     padding: 0;
     list-style-type: none;
@@ -134,7 +173,7 @@
 
 @media(min-width:768px) {
     #wrapper {
-        padding-left: 256px;
+        padding-left: 250px;
     }
 
     #wrapper.toggled {
@@ -142,7 +181,7 @@
     }
 
     #sidebar-wrapper {
-        width: 256px;
+        width: 250px;
     }
 
     #wrapper.toggled #sidebar-wrapper {
@@ -157,5 +196,13 @@
     #wrapper.toggled #page-content-wrapper {
         position: relative;
         margin-right: 0;
+    }
+}
+
+
+@media(max-width:768px) {
+
+    .sidebar-nav {
+        width: 250px;
     }
 }
