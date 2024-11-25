@@ -5,8 +5,8 @@
 **$ git fetch origin**
 Begin by pulling down the latest changes from the main branch or features branch you want to start with
 
-**$ git pull origin master**
-Get the latest code from the master branch on the remote repository
+**$ git pull origin main**
+Get the latest code from the main branch on the remote repository
 
 **$ git add _"src/filename.html"_**
 
