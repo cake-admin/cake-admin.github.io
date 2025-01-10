@@ -68,12 +68,19 @@ body {
   }
 
   .card:hover {
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.8s ease, box-shadow 0.8s ease; /* Apply transition to transform and box-shadow */
   }
 
   .cardCake {
     background-image: url('../img/thumbs/thumb_cake.png'); /* Path to your image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .cardAI {
+    background-image: url('../img/thumbs/thumb_ai.png'); /* Path to your image */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -86,8 +93,15 @@ body {
     background-position: center;
   }
 
-  .cardBIS {
-    background-image: url('../img/thumbs/thumb_BIS.png'); /* Path to your image */
+  .cardEnt {
+    background-image: url('../img/thumbs/thumb_ent.png'); /* Path to your image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .cardRV {
+    background-image: url('../img/thumbs/thumb_rv.png'); /* Path to your image */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
