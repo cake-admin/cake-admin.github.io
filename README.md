@@ -2,6 +2,11 @@
 
 ## To commit files
 
+**$ git add filename.html**
+**$ git commit -m "Your commit message"**
+**$ git pull origin main**
+Commit your changes before pulling
+
 **$ git fetch origin**
 Begin by pulling down the latest changes from the main branch or features branch you want to start with
 
