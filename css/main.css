@@ -133,3 +133,47 @@ a:visted {
   border:0;
   border-top: 1px solid #E2E8F0;
 }
+
+/* Search Bar */
+.search-bar {
+  background-color: #f5f7fa;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 0;
+}
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  color: #4b5563;
+  font-size: 1.2rem;
+}
+.search-input {
+  border: none;
+  background-color: transparent;
+  height: 50px;
+  padding-left: 2.5rem;
+  font-size: 1rem;
+  color: #111827;
+}
+.search-input:focus, input[type="search"]:focus {
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.back-to-top button {
+  margin-top: 25px;
+  color: #1D4ED8;
+  font-weight: 600;
+  content: "\f0d7";
+}
+
+/* Autofill fix for Chrome, Safari, Edge (WebKit) */
+input.form-control.search-input:-webkit-autofill {
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: inherit !important;
+  transition: background-color 100000s ease-in-out 0s;
+}

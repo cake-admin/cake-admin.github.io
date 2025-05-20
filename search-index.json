@@ -1,0 +1,132 @@
+[
+  {
+    "title": "Accordion",
+    "url": "accordion.html",
+    "snippet": "The accordion component is designed to efficiently manage and display content in a collapsible and expandable format. It allows users to interact with sections of content, revealing or hiding information as needed, thereby enhancing user experience and optimizing space utilization."
+  },
+  {
+    "title": "Alert",
+    "url": "alert.html",
+    "snippet": "The Alert Component is a versatile UI element designed to deliver important messages, notifications, warnings, or feedback to users in an efficient and visually appealing manner. It serves as a crucial part of our design system, ensuring consistent and effective communication across all digital platforms."
+  },
+  {
+    "title": "Avatar",
+    "url": "avatar.html",
+    "snippet": "The Avatar Component is a visual representation of a user or entity, typically displayed as a circular image or icon. It serves to personalize user profiles, comments, or any other interactive elements within the interface."
+  },
+  {
+    "title": "Badge",
+    "url": "badge.html",
+    "snippet": "The Badge Component is a visual element used to highlight or indicate specific attributes, status, or counts within an interface. It provides a concise and eye-catching way to draw attention to important information or actions."
+  },
+  {
+    "title": "Breadcrumb",
+    "url": "breadcrumb.html",
+    "snippet": "The Breadcrumb Component is a navigation aid that provides users with a trail of links representing their current location within a hierarchical structure. It allows users to easily trace their path back to previous pages or sections within an application or website."
+  },
+  {
+    "title": "Button",
+    "url": "button.html",
+    "snippet": "The Button Component is a fundamental element of the user interface used for triggering actions, navigating between pages, or submitting forms. It provides a clear call-to-action and enhances user interaction within the application or website."
+  },
+  {
+    "title": "Checkbox",
+    "url": "checkbox.html",
+    "snippet": "The Checkbox Component is a user interface element used to enable users to select one or more options from a set of choices. It allows for the selection and deselection of options, providing users with control and flexibility in their interactions."
+  },
+  {
+    "title": "Chip",
+    "url": "chip.html",
+    "snippet": "The Chip Component is a compact and versatile UI element used to represent discrete pieces of information, attributes, or actions within an interface. It offers a visually appealing way to display and interact with small sets of data or options."
+  },
+  {
+    "title": "Data Table",
+    "url": "datatable.html",
+    "snippet": "The Data Table component is used to present large sets of data in a tabular format, enabling users to quickly scan, compare, and interact with the information. It supports features such as sorting, filtering, pagination, and inline editing to enhance user experience and data management."
+  },
+  {
+    "title": "Datepicker",
+    "url": "datepicker.html",
+    "snippet": "The Date Picker component allows users to select a date from an interactive calendar or input field. It is a versatile UI element commonly used in forms where date input is required. This document outlines the specifications, usage guidelines, and best practices for implementing the Date Picker component in your application."
+  },
+  {
+    "title": "Dropdown",
+    "url": "dropdown.html",
+    "snippet": "The Dropdown component allows users to select a value from a list of options. It is an essential UI element used in various forms and interfaces to simplify the selection process and improve user experience."
+  },
+  {
+    "title": "Link",
+    "url": "link.html",
+    "snippet": "Hyperlinks are clickable text elements that redirect users to different pages, sections, or external resources. They are a crucial element in creating an intuitive and navigable user interface."
+  },
+  {
+    "title": "Loading",
+    "url": "loading.html",
+    "snippet": "The Loading Spinner component serves as a feedback mechanism to indicate that a system process is underway. It helps manage user expectations by showing that the system is busy and will return results or allow further interaction once the current operation is complete."
+  },
+  {
+    "title": "Textarea",
+    "url": "textarea.html",
+    "snippet": "The Text Area component is a multi-line text input field used for capturing large amounts of user input. It can be used in forms, comment sections, feedback forms, and anywhere a large text input is needed. This documentation outlines the design, usage, and implementation details for the Text Area component."
+  },
+  {
+    "title": "Textarea",
+    "url": "textarea.html",
+    "snippet": "The Text Area component is a multi-line text input field used for capturing large amounts of user input. It can be used in forms, comment sections, feedback forms, and anywhere a large text input is needed. This documentation outlines the design, usage, and implementation details for the Text Area component."
+  },
+  {
+    "title": "Textfield",
+    "url": "textfield.html",
+    "snippet": "The Text Field component is used for single-line text input. It can be employed in forms or anywhere a user needs to input text data."
+  },
+  {
+    "title": "Modal",
+    "url": "modal.html",
+    "snippet": "The Modal component is a crucial UI element used to display content on top of the main interface without navigating away from the current page. It is typically used for forms, notifications, or additional information that requires user attention."
+  },
+  {
+    "title": "Menu",
+    "url": "menu.html",
+    "snippet": "The Menu Component is a user interface element that presents a list of options or actions for users to choose from. It serves as a navigational aid, enabling users to access various features, pages, or functionalities within an application or website."
+  },
+  {
+    "title": "Radio",
+    "url": "radio.html",
+    "snippet": "The Radio Component is a user interface element that allows users to select a single option from a list of mutually exclusive choices. It presents options as a list of radio buttons, enabling users to make a single selection among available options."
+  },
+  {
+    "title": "Tab",
+    "url": "tab.html",
+    "snippet": "The Tabs Component is a user interface element that organizes content into multiple panels, allowing users to switch between them using tab controls. It provides a structured and space-efficient way to present related information or functionalities within a single view."
+  },
+  {
+    "title": "Toggle",
+    "url": "toggle.html",
+    "snippet": "The Toggle Component is a user interface element used to enable or disable a particular setting, option, or feature with a binary choice. It provides a simple and intuitive way for users to switch between two states."
+  },
+  {
+    "title": "Tooltip",
+    "url": "tooltip.html",
+    "snippet": "The Tooltip Component is a user interface element that provides contextual information or additional details when users hover over or interact with specific elements. It enhances user experience by offering quick and relevant information without cluttering the interface."
+  },
+  {
+    "title": "Slider",
+    "url": "slider.html",
+    "snippet": "The Slider Component is a user interface element that enables users to select a value within a specified range by dragging a handle along a track. It provides a visually interactive way for users to set numeric values or adjust settings."
+  },
+  {
+    "title": "Color",
+    "url": "color.html",
+    "snippet": "It sets the tone for our brand, guides user attention, and ensures accessible, consistent experiences across products. This section outlines our core color palette and provides usage guidance to maintain visual harmony, support accessibility, and reinforce brand identity."
+  },
+  {
+    "title": "Icons",
+    "url": "icons.html",
+    "snippet": "Icons provide quick, visual cues that enhance usability and reinforce meaning. Our icon system is designed to be simple, scalable, and intuitive—supporting clear communication across platforms."
+  },
+  {
+    "title": "Typography",
+    "url": "typography.html",
+    "snippet": "Typography is essential to how we communicate. It shapes the tone of our voice, affects readability, and builds visual hierarchy. This section defines our type system—including font choices, weights, and sizing—to ensure consistency, clarity, and brand alignment across all interfaces."
+  }
+]
