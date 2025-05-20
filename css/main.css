@@ -141,6 +141,13 @@ a:visted {
   border-radius: 8px;
   padding: 0;
 }
+
+@media (max-width: 768px) {
+.search-bar {
+    margin-top: 55px;
+  }
+}
+
 .search-icon {
   position: absolute;
   top: 50%;
