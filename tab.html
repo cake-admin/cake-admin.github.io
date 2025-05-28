@@ -26,7 +26,7 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,300italic,300,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -48,15 +48,71 @@
       <div class="toggler">
         <a href="#menu-toggle" id="menu-toggle"><i class="material-icons md-18">close</i></a>
       </div>
-
+      <!-- Search Bar -->
+      <div class="container mt-4">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <form class="d-flex search-bar position-relative" role="search"  action="search.html" method="GET">
+              <div class="input-group">
+                  <i class="bi bi-search search-icon"></i>
+                  <input class="form-control ps-5 search-input" type="search" name="q" placeholder="Search..." aria-label="Search" required>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- End Search Bar -->
       <!-- Page Content -->
       <div id="page-content-wrapper">
         <!--<a href="index.html"><div id = "logo"><i class="material-icons">cake</i></div></a>-->
-          <div class="container-fluid">
-              <div class="myrow">
+          <div class="container mt-4">
+            <div class="row justify-content-center">
+              <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                   <!--<div class="col-lg-12 col-sm-12 col-xs-6">-->
+                    <h1>Tab</h1>
+                    <p><strong>Developers</strong> - Detailed specifications for this component are avalible in the <a href="https://www.figma.com/design/BCCMpyKHRRpKWoe3jAtd35/%F0%9F%8E%82-Cake?node-id=24057-7282" target="_blank">Tab</a> section in Figma.</p>
+                    <p>The Tabs Component is a user interface element that organizes content into multiple panels, allowing users to switch between them using tab controls. It provides a structured and space-efficient way to present related information or functionalities within a single view.</p>
                     <section>
-                        <h1>Coming Soon</h1>
+                      <iframe style="border: 0px solid rgba(0, 0, 0, 0.1);" width="650px" height="344px" src="https://embed.figma.com/proto/V3PkTS3T27YY62xCdLUcZ1/Website?node-id=4475-3289&t=w4aB6ecLW4GqmXs4-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=86%3A6644&embed-host=share&hide-ui=1&hotspot-hints=false" allowfullscreen></iframe>
+                    </section>
+                    <section>
+                      <iframe style="border: 0px solid rgba(0, 0, 0, 0.1);" width="650px" height="344px" src="https://embed.figma.com/proto/V3PkTS3T27YY62xCdLUcZ1/Website?node-id=4475-3388&t=w4aB6ecLW4GqmXs4-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=86%3A6644&embed-host=share&hide-ui=1&hotspot-hints=false" allowfullscreen></iframe>
+                    </section>
+                    <section>
+                      <h1>Usage</h1>
+                      <h2>Tab Usage: Default</h2>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <img src="img/tab/Tab_Usage_Default.png"  width="650" height="auto">
+                        </div>
+                      </div>
+                      <h2>Tab Usage: Next Selected </h2>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <img src="img/tab/Tab_Usage_NextArrow_Pressed.png"  width="650" height="auto">
+                        </div>
+                      </div>
+                      <h2>Tab Usage: Selected Last</h2>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <img src="img/tab/Tab_Usage_SelectedLast.png"  width="650" height="auto">
+                        </div>
+                      </div>
+                      <h1>Vertical</h1>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <img src="img/tab/Tab_L_Vertical.png" class="img-responsive" style="width: 100%;">
+                        </div>
+                        <div class="col-md-6">
+                          <img src="img/tab/Tab_D_Vertical.png" class="img-responsive" style="width: 100%;">
+                        </div>
+                      </div>
+                      <h2>Vertical Tab Usage</h2>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <img src="img/tab/Tab_Vertical_Selection_Process.png" width="650" height="auto">
+                        </div>
+                      </div>
                     </section>
                 </div>
             </div>

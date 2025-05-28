@@ -26,7 +26,7 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,300italic,300,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -48,21 +48,104 @@
       <div class="toggler">
         <a href="#menu-toggle" id="menu-toggle"><i class="material-icons md-18">close</i></a>
       </div>
-
+      <!-- Search Bar -->
+      <div class="container mt-4">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <form class="d-flex search-bar position-relative" role="search"  action="search.html" method="GET">
+              <div class="input-group">
+                  <i class="bi bi-search search-icon"></i>
+                  <input class="form-control ps-5 search-input" type="search" name="q" placeholder="Search..." aria-label="Search" required>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- End Search Bar -->
       <!-- Page Content -->
       <div id="page-content-wrapper">
         <!--<a href="index.html"><div id = "logo"><i class="material-icons">cake</i></div></a>-->
-          <div class="container-fluid">
-              <div class="myrow">
-                  <!--<div class="col-lg-12 col-sm-12 col-xs-6">-->
-                    <section>
-                        <h1>Coming Soon</h1>
-                    </section>
+            <div class="container mt-4">
+              <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                        <h1>Menu</h1>
+                        <p><strong>Developers</strong> - Detailed specifications for this component are avalible in the <a href="https://www.figma.com/design/BCCMpyKHRRpKWoe3jAtd35/%F0%9F%8E%82-Cake?node-id=23928-44331" target="_blank">Menu</a> section in Figma.</p>
+                        <p>The Menu Component is a user interface element that presents a list of options or actions for users to choose from. It serves as a navigational aid, enabling users to access various features, pages, or functionalities within an application or website.</p>
+                        <section>
+                          <iframe style="border: 0px solid rgba(0, 0, 0, 0.1);" width="650px" height="344px" src="https://embed.figma.com/proto/V3PkTS3T27YY62xCdLUcZ1/Website?node-id=4458-1782&t=w4aB6ecLW4GqmXs4-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=86%3A6644&embed-host=share&hide-ui=1&hotspot-hints=false" allowfullscreen></iframe>
+                        </section>
+                        <section>
+                          <h2>Default Menu</h2>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <img src="img/menu/Menu_L_Default.png" class="img-responsive" style="width: 100%;">
+                            </div>
+                            <div class="col-md-6">
+                              <img src="img/menu/Menu_D_Default.png" class="img-responsive" style="width: 100%;">
+                            </div>
+                          </div>
+                        </section>
+                        <section>
+                          <h2>Hover</h2>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <img src="img/menu/Menu_L_Hover.png" class="img-responsive" style="width: 100%;">
+                            </div>
+                            <div class="col-md-6">
+                              <img src="img/menu/Menu_D_Hover.png" class="img-responsive" style="width: 100%;">
+                            </div>
+                          </div>
+                        </section>
+                        <section>
+                          <h2>Selected</h2>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <img src="img/menu/Menu_L_Selected.png" class="img-responsive" style="width: 100%;">
+                            </div>
+                            <div class="col-md-6">
+                              <img src="img/menu/Menu_D_Selected.png" class="img-responsive" style="width: 100%;">
+                            </div>
+                          </div>
+                        </section>
+                        <section>
+                          <h2>Selected Hover</h2>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <img src="img/menu/Menu_L_Selected_Hover.png" class="img-responsive" style="width: 100%;">
+                            </div>
+                            <div class="col-md-6">
+                              <img src="img/menu/Menu_D_Selected_Hover.png" class="img-responsive" style="width: 100%;">
+                            </div>
+                          </div>
+                        </section>
+                        <section>
+                          <h2>Focused</h2>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <img src="img/menu/Menu_L_Focused.png" class="img-responsive" style="width: 100%;">
+                            </div>
+                            <div class="col-md-6">
+                              <img src="img/menu/Menu_D_Focused.png" class="img-responsive" style="width: 100%;">
+                            </div>
+                          </div>
+                        </section>
+                        <section>
+                          <h2>Disabled</h2>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <img src="img/menu/Menu_L_Disabled.png" class="img-responsive" style="width: 100%;">
+                            </div>
+                            <div class="col-md-6">
+                              <img src="img/menu/Menu_D_Disabled.png" class="img-responsive" style="width: 100%;">
+                            </div>
+                          </div>
+                        </section>
                 </div>
             </div>
         </div>
     </div>
 </body>
+
 
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
