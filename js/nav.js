@@ -22,11 +22,12 @@ function initializeSidebarState() {
     if (isCollapsed) {
         $sidebar.addClass('collapsed');
         $wrapper.addClass('collapsed');
-        $toggler.css('left', '10px');
+        $toggler.addClass('collapsed');
         $icon.text('menu');
     } else {
+        $sidebar.removeClass('collapsed');
         $wrapper.removeClass('collapsed');
-        $toggler.css('left', '250px');
+        $toggler.removeClass('collapsed');
         $icon.text('close');
     }
 }
@@ -140,6 +141,23 @@ $(document).ready(function() {
         $('.submenu li a, .nav-link').removeClass('active');
         // Add active class to clicked link
         $(this).addClass('active');
+
+        // Check if we're on a small screen (max-width: 768px)
+        if (window.innerWidth <= 768) {
+            const $sidebar = $('#sidebar-wrapper');
+            const $wrapper = $('#wrapper');
+            const $toggler = $('.toggler');
+            const $icon = $('#menu-toggle i');
+
+            // Add collapsed classes
+            $sidebar.addClass('collapsed');
+            $wrapper.addClass('collapsed');
+            $toggler.addClass('collapsed');
+            $icon.text('menu');
+
+            // Save the state to localStorage
+            localStorage.setItem('sidebar_collapsed', 'true');
+        }
     });
 });
 
@@ -147,21 +165,22 @@ $(document).ready(function() {
 $(document).on('click', '#menu-toggle', function(e) {
     e.preventDefault();
     const $sidebar = $('#sidebar-wrapper');
+    const $wrapper = $('#wrapper');
     const $toggler = $('.toggler');
     const $icon = $(this).find('i');
 
-    // Toggle the sidebar visibility
+    // Toggle the collapsed classes
     $sidebar.toggleClass('collapsed');
+    $wrapper.toggleClass('collapsed');
+    $toggler.toggleClass('collapsed');
 
     // Save the state to localStorage
     localStorage.setItem('sidebar_collapsed', $sidebar.hasClass('collapsed'));
 
-    // Adjust the toggler's position and icon
+    // Update the icon
     if ($sidebar.hasClass('collapsed')) {
-        $toggler.css('left', '10px');
         $icon.text('menu');
     } else {
-        $toggler.css('left', '250px');
         $icon.text('close');
     }
 });
