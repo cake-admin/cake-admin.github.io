@@ -1,5 +1,3 @@
-
-
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
@@ -41,15 +39,20 @@ a:visted {
 }
 
 .toggler {
-  padding: 18px;
+  padding: 0 16px 16px 16px;
+  margin-top: -8px;
   width: 60px;
   height: 60px;
   z-index: 100;
-  position:fixed;
+  position: fixed;
+  display: flex;
+  align-items: center;
 }
 
 .toggler a {
   color: #333;
+  display: flex;
+  align-items: center;
 }
 
 /* .bubba {
