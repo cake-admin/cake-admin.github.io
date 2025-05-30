@@ -8,70 +8,213 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+// Function to handle sidebar state
+function initializeSidebarState() {
+    const $sidebar = $('#sidebar-wrapper');
+    const $wrapper = $('#wrapper');
+    const $toggler = $('.toggler');
+    const $icon = $('#menu-toggle i');
+    
+    // Check localStorage for saved sidebar state
+    const isCollapsed = localStorage.getItem('sidebar_collapsed') === 'true';
+    
+    // Set the initial state based on localStorage
+    if (isCollapsed) {
+        $sidebar.addClass('collapsed');
+        $wrapper.addClass('collapsed');
+        $toggler.addClass('collapsed');
+        $icon.text('menu');
+    } else {
+        $sidebar.removeClass('collapsed');
+        $wrapper.removeClass('collapsed');
+        $toggler.removeClass('collapsed');
+        $icon.text('close');
+    }
+}
+
 $(document).ready(function() {
+    // Initialize sidebar state on page load
+    initializeSidebarState();
+
+    function setActiveLink() {
+        // Get current path and strip .html if present
+        let currentPath = window.location.pathname;
+        // Remove leading slash and handle root path
+        currentPath = currentPath.replace(/^\//, '');
+        if (currentPath === '' || currentPath === '/') {
+            currentPath = '/';  // Changed this to match the home link href
+        }
+        
+        // Remove active class from all links
+        $('.nav-link, .submenu li a').removeClass('active');
+        
+        // Find and activate the correct link
+        $('.submenu li a, .nav-link').each(function() {
+            let href = $(this).attr('href');
+            if (!href) return;
+            
+            // Special handling for home page
+            if (href === '/' && (currentPath === '/' || currentPath === '' || currentPath === 'index.html')) {
+                $(this).addClass('active');
+                return;
+            }
+            
+            // Clean up href for comparison
+            href = href.replace(/^\//, '');
+            if (href === '/') href = '';
+            
+            // Compare paths with and without .html
+            const hrefWithoutHtml = href.replace('.html', '');
+            const currentPathWithoutHtml = currentPath.replace('.html', '');
+            
+            if (href === currentPath || 
+                hrefWithoutHtml === currentPathWithoutHtml ||
+                href === currentPathWithoutHtml ||
+                hrefWithoutHtml === currentPath) {
+                $(this).addClass('active');
+            }
+        });
+    }
+
     // Load the navigation from nav.html
     $("#navbar-placeholder").load("./nav.html", function(response, status, xhr) {
         if (status === "error") {
             console.log("Error loading navigation: " + xhr.status + " " + xhr.statusText);
         } else {
-            // After loading, apply the active class to the correct item based on localStorage
-            const activePath = localStorage.getItem("activeNavLink");
-            if (activePath) {
-                $('.sidebar-nav li a').each(function() {
-                    if ($(this).attr("href") === activePath) {
-                        $(this).addClass("active");
-                        $(this).closest("ul.collapse").addClass("show"); // Ensure submenu is expanded
-                    }
-                });
-            }
+            // Initialize submenu states
+            $('.has-submenu').each(function() {
+                const $submenu = $(this).find('.submenu');
+                const $toggle = $(this).find('.submenu-toggle');
+                const submenuId = $submenu.attr('id');
+                
+                // Check localStorage for saved state
+                const isExpanded = localStorage.getItem('submenu_' + submenuId) !== 'collapsed';
+                
+                // Set initial state based on localStorage
+                if (!isExpanded) {
+                    $submenu.removeClass('expanded');
+                    $toggle.removeClass('expanded');
+                    $toggle.find('.chevron').css('transform', 'rotate(0deg)');
+                } else {
+                    $submenu.addClass('expanded');
+                    $toggle.addClass('expanded');
+                    $toggle.find('.chevron').css('transform', 'rotate(180deg)');
+                }
+            });
+
+            // Set active link based on current URL
+            setActiveLink();
+
+            // Set the version number dynamically
+            var version = window.CAKE_VERSION || "4.0.1";
+            $("#cake-version").text("Version " + version);
         }
     });
 
-    // Use event delegation to handle click events for dynamically loaded content
-    $(document).on('click', '.sidebar-nav li a', function (e) {
-        const href = $(this).attr('href');
+    // Handle submenu toggles
+    $(document).on('click', '.submenu-toggle', function(e) {
+        e.preventDefault();
+        const $submenu = $(this).next('.submenu');
+        const $toggle = $(this);
+        const submenuId = $submenu.attr('id');
         
-        // Only set the active class if the link has a valid href and is not a parent menu item
-        if (href && href !== "javascript:;") {
-            // Store the clicked link's href in localStorage
-            localStorage.setItem("activeNavLink", href);
-        } else {
-            e.preventDefault(); // Prevent navigation for parent items without a valid href
+        // Toggle the expanded state
+        $toggle.toggleClass('expanded');
+        $submenu.toggleClass('expanded');
+        
+        // Update chevron rotation
+        const isExpanded = $submenu.hasClass('expanded');
+        $toggle.find('.chevron').css('transform', isExpanded ? 'rotate(180deg)' : 'rotate(0deg)');
+        
+        // Save the state to localStorage
+        localStorage.setItem('submenu_' + submenuId, 
+            isExpanded ? 'expanded' : 'collapsed'
+        );
+    });
+
+    // Handle navigation link clicks
+    $(document).on('click', '.submenu li a, .nav-link', function(e) {
+        const href = $(this).attr('href');
+        if (!href || href === '#' || href === 'javascript:;') return;
+        
+        // Remove active class from all links
+        $('.submenu li a, .nav-link').removeClass('active');
+        // Add active class to clicked link
+        $(this).addClass('active');
+
+        // Check if we're on a small screen (max-width: 768px)
+        if (window.innerWidth <= 768) {
+            const $sidebar = $('#sidebar-wrapper');
+            const $wrapper = $('#wrapper');
+            const $toggler = $('.toggler');
+            const $icon = $('#menu-toggle i');
+
+            // Add collapsed classes
+            $sidebar.addClass('collapsed');
+            $wrapper.addClass('collapsed');
+            $toggler.addClass('collapsed');
+            $icon.text('menu');
+
+            // Save the state to localStorage
+            localStorage.setItem('sidebar_collapsed', 'true');
         }
     });
 });
 
-
-$(document).ready(function() {
-    const $sidebar = $('#sidebar-wrapper');
-    const $toggler = $('.toggler');
-    const $icon = $('#menu-toggle i');
-
-    // Set the initial state of the toggler icon based on sidebar state
-    if ($sidebar.hasClass('collapsed')) {
-        $toggler.css('left', '10px'); // Position toggler for collapsed state
-        $icon.text('menu'); // Hamburger icon
-    } else {
-        $toggler.css('left', '250px'); // Position toggler for expanded state
-        $icon.text('close'); // Close icon
-    }
-});
-
+// Handle sidebar toggle
 $(document).on('click', '#menu-toggle', function(e) {
     e.preventDefault();
     const $sidebar = $('#sidebar-wrapper');
+    const $wrapper = $('#wrapper');
     const $toggler = $('.toggler');
     const $icon = $(this).find('i');
 
-    // Toggle the sidebar visibility
+    // Toggle the collapsed classes
     $sidebar.toggleClass('collapsed');
+    $wrapper.toggleClass('collapsed');
+    $toggler.toggleClass('collapsed');
 
-    // Adjust the toggler's position and icon
+    // Save the state to localStorage
+    localStorage.setItem('sidebar_collapsed', $sidebar.hasClass('collapsed'));
+
+    // Update the icon
     if ($sidebar.hasClass('collapsed')) {
-        $toggler.css('left', '10px'); // Move to default position
-        $icon.text('menu'); // Change to hamburger icon
+        $icon.text('menu');
     } else {
-        $toggler.css('left', '250px'); // Align with the sidebar
-        $icon.text('close'); // Change to close icon
+        $icon.text('close');
     }
+});
+
+// Handle chevron rotation based on collapse state
+$(document).on('click', '.sidebar-nav > li > a[data-bs-toggle="collapse"]', function () {
+    var $chevron = $(this).find('i.material-icons');
+    var $target = $($(this).attr('data-bs-target'));
+    
+    // Remove any existing rotation classes
+    $chevron.removeClass('chevron-rotate chevron-up chevron-down');
+    
+    // Add the base rotation class
+    $chevron.addClass('chevron-rotate');
+    
+    // Set the direction based on the target's current state
+    if ($target.hasClass('show')) {
+        // Currently expanded, will collapse
+        $chevron.addClass('chevron-down');
+    } else {
+        // Currently collapsed, will expand
+        $chevron.addClass('chevron-up');
+    }
+});
+
+// Ensure chevron state matches collapse state after animation
+$(document).on('shown.bs.collapse', '.collapse', function () {
+    var $trigger = $('a[data-bs-target="#' + this.id + '"]');
+    var $chevron = $trigger.find('i.material-icons');
+    $chevron.removeClass('chevron-down').addClass('chevron-up');
+});
+
+$(document).on('hidden.bs.collapse', '.collapse', function () {
+    var $trigger = $('a[data-bs-target="#' + this.id + '"]');
+    var $chevron = $trigger.find('i.material-icons');
+    $chevron.removeClass('chevron-up').addClass('chevron-down');
 });

@@ -1,10 +1,8 @@
-
-
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
    .makelistsgreatagain {
-    font-family: "Open Sans", Helvetica, sans-serif;
+    font-family: var(--font-family-base);
     font-size: 16px;
     line-height: 32px;
     padding-bottom: 20px;
@@ -41,15 +39,20 @@ a:visted {
 }
 
 .toggler {
-  padding: 18px;
+  padding: 0 16px 16px 16px;
+  margin-top: -8px;
   width: 60px;
   height: 60px;
   z-index: 100;
-  position:fixed;
+  position: fixed;
+  display: flex;
+  align-items: center;
 }
 
 .toggler a {
   color: #333;
+  display: flex;
+  align-items: center;
 }
 
 /* .bubba {
@@ -183,4 +186,16 @@ input.form-control.search-input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
   -webkit-text-fill-color: inherit !important;
   transition: background-color 100000s ease-in-out 0s;
+}
+
+:root {
+    /* Typography */
+    --font-family-base: "Segoe UI", "Lato", "Noto Sans", Arial, sans-serif;
+    --font-family-monospace: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+body {
+    font-family: var(--font-family-base);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
