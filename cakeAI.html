@@ -68,13 +68,71 @@
             <div class="container mt-4">
               <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                        <h1>Cake for AI</h1>
+                        <h1>Cake AI</h1>
+                        <h2>One Lenovo “Cake” Design System for AI</h2>
+                        <section>
                         <p><strong>Developers</strong> - Detailed specifications for this component are avalible in the <a href="https://www.figma.com/design/QGTItDcA4iOyHy367c5nrP/Cake-AI?node-id=0-1&p=f&t=xIVqrdCb1j9MVKxd-0" target="_blank">Cake AI</a> section in Figma.</p>
-                        <p>Cake for AI is a subsystem designed to be flexible and give users a guideline for creating AI components and agents.</p>
+                        <p>Cake AI is a subsystem designed to be flexible and give users a guideline for creating AI components and agents.</p>
+                        </section>
+                        <section>
+                          <h2>Iconograpy</h2>
+                          <p>Lenovo’s AI identity will maintain consistency across all software applications. The Moto AI logo has been adapted as the standard iconography for AI features within these applications.</p>
+                          <div>
+                              <img src="img/cakeAI/CakeAI_Icons.png" class="img-responsive" style="width: 100%;">
+                          </div>
+                        </section>
+                        <section>
+                          <h2>AI Chat Designs</h2>
+                          <p>The building blocks for smooth, smart conversations with AI. From message bubbles to input bars and action buttons, these components make chat interfaces feel fast, friendly, and easy to use</p>
+                          <div class="expandable-img-container" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="expandImage(this.querySelector('img').src)">
+                              <img src="img/cakeAI/CakeAI_ChatDesigns.png" class="img-responsive" style="width: 100%;">
+                          </div>
+                        </section>
+                        <section>
+                          <h2>Components</h2>
+                          <p>Reusable pieces made for building with AI in mind. Sliders, toggles, cards, and modals—all designed to work seamlessly with intelligent features and keep things feeling sleek, fast, and flexible.</p>
+                          <div class="expandable-img-container" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="expandImage(this.querySelector('img').src)">
+                              <img src="img/cakeAI/CakeAI_Components.png" class="img-responsive" style="width: 100%;">
+                          </div>
+                        </section>
+                        <section>
+                        <h2>AI Patterns</h2>
+                        <p>Smart, ready-to-use patterns for common AI interactions—like disclaimers, loading states, and helpful button layouts. Designed to guide users, build trust, and make working with AI feel intuitive from start to finish.</p>
+
+                        <div class="row">
+                          <div class="col-md-4">
+                            <div class="expandable-img-container" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="expandImage(this.querySelector('img').src)">
+                              <img src="img/cakeAI/AI_disclaimer.png" width="100%" height="auto">
+                            </div>
+                            <p>AI Disclaimer</p>
+                          </div>
+
+                          <div class="col-md-4">
+                            <div class="expandable-img-container" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="expandImage(this.querySelector('img').src)">
+                              <img src="img/cakeAI/CakeAI_ResponseButton.png" width="100%" height="auto">
+                            </div>
+                            <p>AI Buttons</p>
+                          </div>
+
+                          <div class="col-md-4">
+                            <div class="expandable-img-container" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="expandImage(this.querySelector('img').src)">
+                              <img src="img/cakeAI/CakeAI_ResponseCard.png" width="100%" height="auto">
+                            </div>
+                            <p>AI Response Cards</p>
+                          </div>
+                        </div>
+
+                        </section>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+  function expandImage(src) {
+    document.getElementById('modalImage').src = src;
+  }
+</script>
 </body>
 
 <!-- jQuery -->
@@ -88,5 +146,17 @@
 
 <!-- Link to your manu.js file --> 
 <script src="js/menu.js"></script>
+
+<!-- Image Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-body text-center">
+        <img id="modalImage" src="" class="img-fluid" alt="Expanded View">
+      </div>
+    </div>
+  </div>
+</div>
+
 
 </html>
